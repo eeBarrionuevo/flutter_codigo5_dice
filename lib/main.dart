@@ -16,9 +16,16 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class DicePage extends StatelessWidget {
-  const DicePage({Key? key}) : super(key: key);
 
+
+
+class DicePage extends StatefulWidget {
+  @override
+  State<DicePage> createState() => _DicePageState();
+}
+
+class _DicePageState extends State<DicePage> {
+  int leftDice = 2;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,17 +40,24 @@ class DicePage extends StatelessWidget {
           children: [
             Expanded(
               flex: 1,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
+              child: TextButton(
+                onPressed: (){
+                  leftDice = 6;
+                  setState(() {
+
+                  });
+                },
                 child: Image.asset(
-                  'assets/images/dice2.png',
+                  'assets/images/dice$leftDice.png',
                 ),
               ),
             ),
             Expanded(
               flex: 1,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
+              child: TextButton(
+                onPressed: (){
+                  print("Right dice");
+                },
                 child: Image.asset(
                   'assets/images/dice2.png',
                 ),
@@ -55,3 +69,20 @@ class DicePage extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
