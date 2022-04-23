@@ -25,9 +25,12 @@ class DicePage extends StatefulWidget {
 }
 
 class _DicePageState extends State<DicePage> {
+
   int leftDice = 2;
+
   @override
   Widget build(BuildContext context) {
+    print("MÉTODO BUILD!!!!!!");
     return Scaffold(
       backgroundColor: Colors.deepPurple,
       appBar: AppBar(
@@ -43,9 +46,7 @@ class _DicePageState extends State<DicePage> {
               child: TextButton(
                 onPressed: (){
                   leftDice = 6;
-                  setState(() {
-
-                  });
+                  setState(() {});
                 },
                 child: Image.asset(
                   'assets/images/dice$leftDice.png',
